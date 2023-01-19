@@ -8,5 +8,6 @@ public class Main {
 
         System.out.println("В январе больше всего было продано автомобилей в " + show.indexMax() + " неделю месяца: " + show.max() + " шт.");
 
+        System.out.println("Среднее количество проданных авто в неделю: " + show.average(sales, show.indexMin(), show.indexMax()));
     }
 }
