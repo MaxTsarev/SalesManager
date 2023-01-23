@@ -51,20 +51,20 @@ public class SalesManager {
 
     public long average(long [] sales, long minInd, long maxInd) {
         long result = 0;
-        long [] newSales = new int[sales.length - 1];
+        long [] newSales = new long[sales.length - 1];
         long minInd2 = minInd - 1;
         for(int i = 0; i < sales.length; i++) {
             if(i != minInd2) {
-                long newRes = i < minInd2 ? i : i - 1;
+                int newRes = i < minInd2 ? i : i - 1;
                 newSales[newRes] = sales[i];
             }
         }
 
-        long [] newSales2 = new int[newSales.length - 1];
+        long [] newSales2 = new long[newSales.length - 1];
         long maxInd2 = maxInd - 2;
         for(int i = 0; i < newSales.length; i++) {
             if(i != maxInd2) {
-                long newRes = i < maxInd2 ? i : i - 1;
+                int newRes = i < maxInd2 ? i : i - 1;
                 newSales2[newRes] = newSales[i];
             }
         }
