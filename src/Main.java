@@ -2,7 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int[] sales = {5, 2, 4, 7};
+        long[] sales = {5, 2, 4, 7};
 
         SalesManager show = new SalesManager(sales);
 

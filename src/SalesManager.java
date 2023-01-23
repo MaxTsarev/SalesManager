@@ -2,15 +2,15 @@ import java.util.Arrays;
 
 public class SalesManager {
 
-    protected int[] sales;
+    protected long[] sales;
 
-    public SalesManager(int[] sales) {
+    public SalesManager(long[] sales) {
         this.sales = sales;
     }
 
-    public int max() {
-        int max = -1;
-        for (int sale : sales) {
+    public long max() {
+        long max = -1;
+        for (long sale : sales) {
             if (sale > max) {
                 max = sale;
             }
@@ -18,16 +18,16 @@ public class SalesManager {
         return max;
     }
 
-    public int min() {
-        int[] sales2 = sales.clone();
+    public long min() {
+        long[] sales2 = sales.clone();
         Arrays.sort(sales2);
-        int min = sales2[0];
+        long min = sales2[0];
         return min;
     }
 
-    public int indexMax() {
-        int indMax = 0;
-        int maxVal = sales[0];
+    public long indexMax() {
+        long indMax = 0;
+        long maxVal = sales[0];
         for (int i = 1; i < sales.length; i++) {
             if (maxVal < sales[i]) {
                 maxVal = sales[i];
@@ -37,9 +37,9 @@ public class SalesManager {
         return indMax;
     }
 
-    public int indexMin() {
-        int indMin = 0;
-        int minVal = sales[0];
+    public long indexMin() {
+        long indMin = 0;
+        long minVal = sales[0];
         for (int i = 1; i < sales.length; i++) {
             if (minVal > sales[i]) {
                 minVal = sales[i];
@@ -49,27 +49,27 @@ public class SalesManager {
         return indMin;
     }
 
-    public int average(int [] sales, int minInd, int maxInd) {
-        int result = 0;
-        int [] newSales = new int[sales.length - 1];
-        int minInd2 = minInd - 1;
+    public long average(long [] sales, long minInd, long maxInd) {
+        long result = 0;
+        long [] newSales = new int[sales.length - 1];
+        long minInd2 = minInd - 1;
         for(int i = 0; i < sales.length; i++) {
             if(i != minInd2) {
-                int newRes = i < minInd2 ? i : i - 1;
+                long newRes = i < minInd2 ? i : i - 1;
                 newSales[newRes] = sales[i];
             }
         }
 
-        int [] newSales2 = new int[newSales.length - 1];
-        int maxInd2 = maxInd - 2;
+        long [] newSales2 = new int[newSales.length - 1];
+        long maxInd2 = maxInd - 2;
         for(int i = 0; i < newSales.length; i++) {
             if(i != maxInd2) {
-                int newRes = i < maxInd2 ? i : i - 1;
+                long newRes = i < maxInd2 ? i : i - 1;
                 newSales2[newRes] = newSales[i];
             }
         }
 
-        int sum = 0;
+        long sum = 0;
         for(int a = 0; a < newSales2.length; a++) {
             sum += newSales2[a];
         }
